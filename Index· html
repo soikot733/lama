@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lama Development Foundation (LDF) – Sustainable Community. Green Future.</title>
+  <meta name="description" content="Lama Development Foundation (LDF) empowers youth and communities in Lama, Bandarban through green livelihoods, women’s empowerment, health, education, tourism, and waste management." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lama Development Foundation (LDF)" />
+  <meta property="og:description" content="Join us in building a sustainable Lama." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ldf-green:#2e7d32; /* primary */
+      --ldf-blue:#1565c0;  /* secondary */
+      --ldf-yellow:#f9a825;/* accent */
+      --ldf-bg:#f9fafb;    /* light background */
+      --ldf-dark:#0f172a;  /* text */
+      --container:1200px;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ldf-dark);background:#fff}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout helpers */
+    .container{max-width:var(--container);margin-inline:auto;padding:0 20px}
+    .grid{display:grid;gap:24px}
+    .btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:600;box-shadow:var(--shadow)}
+    .btn--primary{background:var(--ldf-green);color:#fff}
+    .btn--secondary{background:var(--ldf-blue);color:#fff}
+    .btn--ghost{border:2px solid #ffffffb3;color:#fff}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#e8f5e9;color:var(--ldf-green);font-weight:600;font-size:.9rem}
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+
+    /* Header / Nav */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef2f7}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand__logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--ldf-green),var(--ldf-blue));display:grid;place-items:center;color:#fff;font-weight:800}
+    .nav__links{display:flex;gap:18px;align-items:center}
+    .nav__links a{padding:8px 10px;border-radius:10px}
+    .nav__links a:hover{background:#f1f5f9}
+    .lang{display:flex;gap:6px;align-items:center}
+    .lang select{padding:6px 10px;border:1px solid #e2e8f0;border-radius:10px;background:#fff}
+
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero__bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;filter:brightness(.6);z-index:-1}
+    .hero__content{padding:96px 0 80px;color:#fff;text-align:center}
+    .hero h1{font-size:clamp(2rem,4vw,3rem);margin:0 0 12px}
+    .hero p{font-size:1.1rem;opacity:.95;margin:0 0 24px}
+    .hero__cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+    /* Who we are */
+    section{padding:64px 0}
+    .section__title{font-size:1.8rem;margin:0 0 12px}
+    .section__desc{margin:0 0 24px;color:#475569}
+
+    /* Impact */
+    .impact{background:var(--ldf-bg)}
+    .impact__grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+    .impact__box{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+    .impact__icon{font-size:26px}
+    .impact__stat{font-size:1.6rem;font-weight:700;color:var(--ldf-green)}
+
+    /* Operations */
+    .ops__grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .ops__item{display:flex;flex-direction:column;gap:10px}
+    .ops__badge{font-size:.85rem;background:#eef2ff;color:var(--ldf-blue);display:inline-block;padding:6px 10px;border-radius:999px;font-weight:600}
+
+    /* CTA band */
+    .cta{background:linear-gradient(135deg,var(--ldf-green),var(--ldf-blue));color:#fff;border-radius:var(--radius)}
+    .cta .container{padding:36px 20px}
+
+    /* Gallery */
+    .gallery__grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .gallery__img{aspect-ratio:4/3;border-radius:14px;object-fit:cover}
+
+    /* Footer */
+    footer{background:#0b1220;color:#cbd5e1;padding:40px 0 20px;margin-top:24px}
+    .footer__grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+    .footer h4{margin:0 0 10px;color:#fff}
+    .footer a{color:#cbd5e1}
+    .copyright{border-top:1px solid #1e293b;margin-top:20px;padding-top:16px;font-size:.9rem;color:#94a3b8}
+
+    /* Responsive tweaks */
+    @media (max-width:760px){
+      .nav__links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="LDF home">
+        <div class="brand__logo">L</div>
+        <div>
+          <strong>Lama Development Foundation</strong><br/>
+          <small style="color:#64748b">Sustainable Community. Green Future.</small>
+        </div>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#operations">Programs</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn--secondary" href="/donate.html">Donate</a>
+      </nav>
+      <div class="lang" aria-label="Language switcher">
+        <span style="font-size:.9rem;color:#475569">Language</span>
+        <select id="langSelect" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="bn">বাংলা</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero__bg" role="img" aria-label="Scenic hills and forests of Bandarban"></div>
+    <div class="container hero__content">
+      <span class="pill">Youth-led • Community-powered</span>
+      <h1>Sustainable Community. Green Future.</h1>
+      <p>Empowering youth and communities in Lama, Bandarban for a resilient future.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="/donate.html">Donate Now</a>
+        <a class="btn btn--ghost" href="#operations">Our Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Are -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section__title">Who We Are</h2>
+      <p class="section__desc">Lama Development Foundation (LDF) is a youth-led community initiative focused on green livelihoods, women's empowerment, health, education, and sustainable tourism in Lama, Bandarban.</p>
+      <div class="card" style="display:flex;gap:16px;align-items:center">
+        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=800&auto=format&fit=crop" alt="Community gathering" style="width:120px;height:120px;object-fit:cover;border-radius:14px" />
+        <div>
+          <p style="margin:0 0 8px;color:#334155">We partner with local youth, women, and farmers to co-create practical solutions: mushroom cultivation, CSA, solar energy access, eco-friendly construction blocks, skills training, responsible tourism, and community health campaigns.</p>
+          <a class="btn btn--secondary" href="/about.html">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact / Mission Highlights -->
+  <section id="impact" class="impact">
+    <div class="container">
+      <h2 class="section__title">Our Impact</h2>
+      <p class="section__desc">Tangible progress powered by volunteers, partners, and the Lama community.</p>
+      <div class="grid impact__grid">
+        <div class="card impact__box">
+          <div class="impact__icon">🌱</div>
+          <div class="impact__stat">300+ </div>
+          <div>Farmers trained in mushroom & CSA</div>
+        </div>
+        <div class="card impact__box">
+          <div class="impact__icon">🧑‍🎓</div>
+          <div class="impact__stat">500+ </div>
+          <div>Students supported</div>
+        </div>
+        <div class="card impact__box">
+          <div class="impact__icon">👩‍🔧</div>
+          <div class="impact__stat">200+ </div>
+          <div>Women entrepreneurs empowered</div>
+        </div>
+        <div class="card impact__box">
+          <div class="impact__icon">🏥</div>
+          <div class="impact__stat">5 </div>
+          <div>Community health drives launched</div>
+        </div>
+        <div class="card impact__box">
+          <div class="impact__icon">♻</div>
+          <div class="impact__stat">Green Lama</div>
+          <div>Waste, Recycling & Energy Solution</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Operations summary -->
+  <section id="operations">
+    <div class="container">
+      <h2 class="section__title">Our Operations</h2>
+      <p class="section__desc">Explore our core programs. Each block links to more details.</p>
+      <div class="grid ops__grid">
+        <a class="card ops__item" href="/programs.html#green-hub">
+          <span class="ops__badge">Lama Green Hub</span>
+          <strong>Mushroom & Medicinal Plants • Solar Solutions • Eco-Blocks</strong>
+          <span style="color:#64748b">Green livelihoods & climate resilience</span>
+        </a>
+        <a class="card ops__item" href="/programs.html#women">
+          <span class="ops__badge">Women Empowerment</span>
+          <strong>Entrepreneurship • Skills • Finance access</strong>
+          <span style="color:#64748b">Dignified income for women</span>
+        </a>
+        <a class="card ops__item" href="/programs.html#youth">
+          <span class="ops__badge">Youth Education</span>
+          <strong>Scholarships • Tutoring • Digital skills</strong>
+          <span style="color:#64748b">Opportunities for the next generation</span>
+        </a>
+        <a class="card ops__item" href="/programs.html#tourism">
+          <span class="ops__badge">Sustainable Tourism</span>
+          <strong>Community-based tourism • Training</strong>
+          <span style="color:#64748b">Preserve nature & culture</span>
+        </a>
+        <a class="card ops__item" href="/programs.html#green-lama">
+          <span class="ops__badge">Green Lama</span>
+          <strong>Waste Management, Recycling & Energy</strong>
+          <span style="color:#64748b">Cleaner, circular, and powered</span>
+        </a>
+        <a class="card ops__item" href="/programs.html#health-lama">
+          <span class="ops__badge">Health Lama</span>
+          <strong>Diagnostics & Emergency Medical Care</strong>
+          <span style="color:#64748b">Accessible community health</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="cta" aria-label="Call to action">
+    <div class="container" style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div>
+        <h3 style="margin:0 0 6px">Join us in building a sustainable Lama</h3>
+        <p style="margin:0;opacity:.9">Support through donation, volunteering, or partnership.</p>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn--yellow btn--primary" href="/donate.html" style="background:var(--ldf-yellow);color:#1f2937">Donate Now</a>
+        <a class="btn btn--secondary" href="/contact.html">Become a Partner</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery preview -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section__title">Latest Photos</h2>
+      <p class="section__desc">Snapshots from training, field visits, and community events.</p>
+      <div class="grid gallery__grid">
+        <!-- Replace with your own images -->
+        <a href="/gallery.html"><img class="gallery__img" src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1000&auto=format&fit=crop" alt="Workshop"/></a>
+        <a href="/gallery.html"><img class="gallery__img" src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1000&auto=format&fit=crop" alt="Seedlings"/></a>
+        <a href="/gallery.html"><img class="gallery__img" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop" alt="Training"/></a>
+        <a href="/gallery.html"><img class="gallery__img" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1000&auto=format&fit=crop" alt="Youth learning"/></a>
+        <a href="/gallery.html"><img class="gallery__img" src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?q=80&w=1000&auto=format&fit=crop" alt="Women at work"/></a>
+        <a href="/gallery.html"><img class="gallery__img" src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=1000&auto=format&fit=crop" alt="Community"/></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container footer">
+      <div class="grid footer__grid">
+        <div>
+          <h4>Lama Development Foundation</h4>
+          <p style="margin:6px 0 12px">Lama, Bandarban • Bangladesh</p>
+          <a class="pill" href="mailto:contact@lamadevelopmentfoundation.org">contact@lamadevelopmentfoundation.org</a>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="#about">About</a> · <a href="#operations">Programs</a> · <a href="/donate.html">Donate</a> · <a href="#contact">Contact</a></p>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <p>
+            <a href="https://lamadevelopmentfoundation.org/" target="_blank" rel="noopener">Website</a><br/>
+            <a href="https://www.facebook.com/lamadevelopmentfoundation" target="_blank" rel="noopener">Facebook</a><br/>
+            <a href="https://www.linkedin.com/company/lama-development-foundation-ldf/" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <div class="container copyright">
+        © <span id="year"></span> Lama Development Foundation | All rights reserved
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year auto-update
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple language toggle (placeholder).
+    // For production, swap text nodes or load i18n bundles.
+    const langSelect = document.getElementById('langSelect');
+    langSelect.addEventListener('change', (e)=>{
+      const lang = e.target.value;
+      if(lang==='bn'){
+        alert('বাংলা সংস্করণ টেক্সট প্লেসহোল্ডার – পরে কনটেন্ট যোগ করুন।');
+      }
+    });
+  </script>
+</body>
+</html>
